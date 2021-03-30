@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /*
 * class_1
-* 一个简单的flutter布局练习‘
+* 一个简单的flutter布局练习
 */
 
 // 声明MyApp类
