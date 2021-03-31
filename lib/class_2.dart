@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Demo',
+      title: 'class_2',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ), //注册路由表

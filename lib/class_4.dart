@@ -11,11 +11,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //返回一个Material风格的组件
     return MaterialApp(
-      title: 'Welcome to Flutteraa',
+      title: 'class_4',
       home: Scaffold(
         //创建一个Bar，并添加文本
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('class_4'),
         ),
         //在主体的中间区域，添加一个hello world 的文本
         body: Center(
