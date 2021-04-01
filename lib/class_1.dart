@@ -1,9 +1,8 @@
-import 'package:flutter/material.dart';
-
 /*
 * class_1
 * 一个简单的flutter布局练习
 */
+import 'package:flutter/material.dart';
 
 // 声明MyApp类
 class MyApp extends StatelessWidget {

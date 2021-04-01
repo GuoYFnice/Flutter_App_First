@@ -1,9 +1,9 @@
-// 导入包。
-import 'package:flutter/material.dart';
 /*
 * class_2
 * 路由相关
 */
+// 导入包。
+import 'package:flutter/material.dart';
 
 // lutter在构建页面时，会调用组件的build方法，widget的主要工作是提供一个build()方法来描述如何构建UI界面（通常是通过组合、拼装其它基础widget）。
 class MyApp extends StatelessWidget {
