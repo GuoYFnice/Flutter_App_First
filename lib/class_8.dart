@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Startup Name Generator',
       home: new RandomWords(),
       theme: new ThemeData(
+        // 这里设置主题
         primaryColor: Colors.black,
       ),
     );
@@ -28,11 +28,11 @@ class RandomWordsState extends State<RandomWords> {
   @override
   final List<WordPair> _suggestions = <WordPair>[];
   final Set<WordPair> _saved = new Set<WordPair>();
+  // 设置字体大小
   final TextStyle _biggerFont = const TextStyle(fontSize: 18.0);
   void _pushSaved() {
     Navigator.of(context).push(
       new MaterialPageRoute<void>(
-        // 新增如下20行代码 ...
         builder: (BuildContext context) {
           final Iterable<ListTile> tiles = _saved.map(
             (WordPair pair) {
@@ -49,14 +49,13 @@ class RandomWordsState extends State<RandomWords> {
             tiles: tiles,
           ).toList();
           return new Scaffold(
-            // 新增 6 行代码开始 ...
             appBar: new AppBar(
               title: const Text('Saved Suggestions'),
             ),
             body: new ListView(children: divided),
           );
         },
-      ), // ... 新增代码结束
+      ),
     );
   }
 
@@ -68,7 +67,6 @@ class RandomWordsState extends State<RandomWords> {
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
         actions: <Widget>[
-          // 新增代码开始 ...
           new IconButton(icon: const Icon(Icons.list), onPressed: _pushSaved),
         ],
       ),
@@ -113,12 +111,10 @@ class RandomWordsState extends State<RandomWords> {
         style: _biggerFont,
       ),
       trailing: new Icon(
-        // 新增代码开始 ...
         alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: alreadySaved ? Colors.red : null,
       ),
       onTap: () {
-        // 增加如下 9 行代码...
         setState(() {
           if (alreadySaved) {
             _saved.remove(pair);
