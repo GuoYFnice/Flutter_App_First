@@ -1,8 +1,3 @@
-/*
-* class_9
-* 
-*/
-
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,6 +6,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // TODO: Add text editing controllers (101)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
