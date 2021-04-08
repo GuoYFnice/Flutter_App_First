@@ -9,6 +9,8 @@ class _LoginPageState extends State<LoginPage> {
   // TODO: Add text editing controllers (101)
   @override
   Widget build(BuildContext context) {
+    final _usernameController = TextEditingController();
+    final _passwordController = TextEditingController();
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -20,9 +22,40 @@ class _LoginPageState extends State<LoginPage> {
                 Image.asset('assets/diamond.png'),
                 SizedBox(height: 16.0),
                 Text('SHRINE'),
+                SizedBox(height: 120.0),
+                TextField(
+                  controller: _usernameController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    labelText: 'Username',
+                  ),
+                ),
+                SizedBox(height: 12.0),
+                TextField(
+                  controller: _passwordController,
+                  decoration: InputDecoration(
+                    filled: true,
+                    labelText: 'Password',
+                  ),
+                  obscureText: true,
+                ),
               ],
             ),
-            SizedBox(height: 120.0),
+            ButtonBar(
+              children: [
+                FlatButton(
+                    child: Text('CANTEL'),
+                    onPressed: () {
+                      _usernameController.clear();
+                      _passwordController.clear();
+                    }),
+                RaisedButton(
+                    child: Text('NEXT'),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    })
+              ],
+            )
           ],
         ),
       ),
