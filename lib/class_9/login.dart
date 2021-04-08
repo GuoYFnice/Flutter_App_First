@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'colors.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -23,21 +24,25 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: 16.0),
                 Text('SHRINE'),
                 SizedBox(height: 120.0),
-                TextField(
-                  controller: _usernameController,
-                  decoration: InputDecoration(
-                    filled: true,
-                    labelText: 'Username',
+                AccentColorOverride(
+                  color: kShrineBrown900,
+                  child: TextField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(
+                      labelText: 'Username',
+                    ),
                   ),
                 ),
                 SizedBox(height: 12.0),
-                TextField(
-                  controller: _passwordController,
-                  decoration: InputDecoration(
-                    filled: true,
-                    labelText: 'Password',
+                AccentColorOverride(
+                  color: kShrineBrown900,
+                  child: TextField(
+                    controller: _usernameController,
+                    decoration: InputDecoration(
+                      labelText: 'Password',
+                    ),
+                    obscureText: true,
                   ),
-                  obscureText: true,
                 ),
               ],
             ),
@@ -51,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                     }),
                 RaisedButton(
                     child: Text('NEXT'),
+                    elevation: 8.0,
                     onPressed: () {
                       Navigator.pop(context);
                     })
@@ -59,6 +65,22 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class AccentColorOverride extends StatelessWidget {
+  const AccentColorOverride({Key key, this.color, this.child})
+      : super(key: key);
+
+  final Color color;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Theme(
+      child: child,
+      data: Theme.of(context).copyWith(accentColor: color),
     );
   }
 }
